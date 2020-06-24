@@ -75,4 +75,19 @@ $(document).ready(function(){
   arrayStudenti.push(nuovoUtente);
 
   console.log(arrayStudenti);
+
+  // BONUS
+  for (var i = 0; i < arrayStudenti.length; i++) {
+    // sintassi handlebars
+    var source = $("#template").html();
+    var template = Handlebars.compile(source);
+    // stampo nell html i singoli stuendi + quello aggiunto dal prompt
+    var singoloStudente = arrayStudenti[i];
+    var messaggioHtml = template(singoloStudente);
+    console.log(messaggioHtml);
+    $(".container").append(messaggioHtml);
+
+  }
+
+
 });
